@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Functions</title>
+	<script type="text/javascript" src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var click = 0;
+			$( ".color" ).click(function(){
+				click++
+				if (click%2==0){
+				$('.color').css('background-color', 'blue');}
+				else {
+					$('.color').css('background-color', 'red');
+				}
+			});
+			$(".hide").click(function(){
+				$(".hide").hide();
+			});
+			$(".show").click(function(){
+				$(".hide").show();
+			});
+			$(".toggle").click(function(){
+				$("p").toggle();
+			});
+			$(".slideDown").click(function(){
+				$("p").slideDown("slow");
+			});
+			$(".slideUp").click(function(){
+				$("p").slideUp("slow");
+			});
+			$(".slideToggle").click(function(){
+				$("p").slideToggle("slow");
+			});
+			$(".fadeIn").click(function(){
+				$("p").fadeIn("fast");
+			});
+			$(".fadeOut").click(function(){
+				$("p").fadeOut("fast");
+			});
+			$(".addClass").click(function(){
+				$("p").addClass("bold");
+			});
+			$(".before").click(function(){
+				$("p").before("<h1>*</h1>");
+			});
+			$(".after").click(function(){
+				$("p").after("<h1>*</h1>");
+			});
+			$(".append").click(function(){
+				$("p").append("*");
+			});
+			$(".html").click(function(){
+				$( "body" )
+				.html( "<p>All new content. <em>You bet!</em></p>" );
+			});
+			$(".attr").click(function(){
+				$( ".attr" ).attr("style", "background-color: blue");
+			});
+			$(".val").click(function(){
+		   		var value = $( ".val" ).text();
+		   		$( "textarea" ).val(value);
+		  });
+			$(".data").click(function(){
+				$("div").data("test", { first11:1, last11:2});
+				$("span:last").text($("div").data("test").first11);
+				$("span:first").text($("div").data("test").last11);
+			});
+		});
+	</script>
+	<style type="text/css">
+		.bold{
+			font-weight: bold;
+		}
+		button{
+			margin: 5px;
+		}
+	</style>
+</head>
+<body>
+	<button type="button" class="color">Click me to change color!</button>
+	<button type="button" class="hide">Click me to hide</button>
+	<button type="button" class="show">Click me to bring the button back</button>
+	<br>
+	<p>This is the paragraph that will be hidden</p>
+	<button type="button" class="toggle">Click me to hide and show the paragraph</button>
+	<br>
+	<p>This paragraph will slowly appear</p>
+	<button type="button" class="slideDown">Click me to make the paragraph slowly appear</button>
+	<button type="button" class="slideUp">Click me to make the paragraph slowly disappear</button>
+	<br>
+	<button type="button" class="slideToggle">Click me to make the paragraph slowly disappear or appear</button>
+	<br>
+	<button type="button" class="fadeIn">Click me to make the paragraph quickly fade in</button>
+	<button type="button" class="fadeOut">Click me to make the paragraph quickly fade out</button>
+	<br>
+	<button type="button" class="addClass">Click me to add a class to a target</button>
+	<br>
+	<button type="button" class="before">Click me to add a * before the paragraph</button>
+	<br>
+	<button type="button" class="after">Click me to add a * after the paragraph</button>
+	<br>
+	<button type="button" class="append">Click me to add a * at the end of the paragraph</button>
+	<br>
+	<button type="button" class="html">Click me to remove the content of page</button>
+	<br>
+	<button type="button" class="attr">Click me to change the color</button>
+	<br>
+	<textarea class=".value"></textarea>
+	<button type="button" class="val">Click me to add the value to the text area</button>
+	<br>
+	<div>Values are <span></span> and <span></span>.</div>
+	<button type="button" class="data">Click me to add data to the div</button>
+
+</body>
+</html>
